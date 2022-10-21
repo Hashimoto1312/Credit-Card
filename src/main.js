@@ -9,9 +9,9 @@ function setCardType(type) {
    const colors = {
       visa: ["#436D99", "#2D57F2"],
       mastercard: ["#DF6F29", "#C69347"],
-      cielo: ["#273AE7", "#2930DF"],
+      nubank: ["#D6B3ED", "#430070"],
       default: ["black", "gray"],
-   };
+   }
    
    ccBgColor01.setAttribute("fill", colors[type][0]);
    ccBgColor02.setAttribute("fill", colors[type][1]);
@@ -58,7 +58,7 @@ const cardNumberPattern = {
       {
       mask: "0000 0000 0000 0000",
       regex: /3/,
-      cardtype: "cielo",
+      cardtype: "nubank",
       },
       {
       mask: "0000 0000 0000 0000",
