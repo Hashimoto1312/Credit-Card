@@ -10,16 +10,13 @@ function setCardType(type) {
       visa: ["#436D99", "#2D57F2"],
       mastercard: ["#DF6F29", "#C69347"],
       cielo: ["#273AE7", "#2930DF"],
-      default: ["black", "green"],
+      default: ["black", "gray"],
    };
    
    ccBgColor01.setAttribute("fill", colors[type][0]);
    ccBgColor02.setAttribute("fill", colors[type][1]);
-   ccBgColor02.setAttribute("fill", colors[type][2]);
    ccLogo.setAttribute("src", `cc-${type}.svg`);
 };
-
-globalThis.setCardType = setCardType;  
 
 const securityCode = document.querySelector('#security-code');
 const securityCodePattern = {
@@ -45,7 +42,6 @@ const expirationDatePattern = {
 };
 const expirationDateMasked = Imask(expirationDate, expirationDatePattern);
 
-
 const cardNumber = document.querySelector("#card-number");
 const cardNumberPattern = {
    mask: [
@@ -61,6 +57,7 @@ const cardNumberPattern = {
       },
       {
       mask: "0000 0000 0000 0000",
+      regex: /3/,
       cardtype: "cielo",
       },
       {
